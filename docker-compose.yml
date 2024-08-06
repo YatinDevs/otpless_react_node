@@ -1,0 +1,34 @@
+version: "3.9"
+
+services:
+  nodeserver:
+    container_name: nodeserver
+    build: ./otpless_node_server
+    restart: unless-stopped
+    env_file:
+      - ./.env
+    environment:
+      - DB_HOST=$DB_HOST
+      - DB_USER=$DB_USER
+      - DB_PASSWORD=$DB_PASSWORD
+      - DB_NAME=$DB_NAME
+      - DB_PORT=$DB_PORT
+      - OTPLESS_CLIENT_ID=$OTPLESS_CLIENT_ID
+      - OTPLESS_CLIENT_SECRET=$OTPLESS_CLIENT_SECRET
+      - SECRET=$SECRET
+      - NODE_DOCKER_PORT=$NODE_DOCKER_PORT
+      - OTPLESS_APP_ID=$OTPLESS_APP_ID
+      - OTPLESS_REDIRECT_URI=$OTPLESS_REDIRECT_URI
+
+  reactclient:
+    container_name: reactclient
+    build: ./otpless_react_client
+    restart: unless-stopped
+    env_file:
+      - ./.env
+    environment:
+      - VITE_APP_BASE_URL=$VITE_APP_BASE_URL
+      - VITE_APP_OTPLESS_APP_ID=$VITE_APP_OTPLESS_APP_ID
+
+volumes:
+  db:
