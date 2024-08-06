@@ -48,4 +48,33 @@
 
 > 1.  Create Node Project :
 
-            npm init -y
+            npm init or npm init -y
+            npm install
+            npm i express
+            npm i nodemon
+            npm run dev or npm start
+            Add .gitignore
+            Add App folder
+              - config
+              - controller
+              - middleware
+              - models
+              - routes
+              - index.js
+
+> 2. Setup Database to Node server :
+
+            npm i pg
+            npm i sequelize
+
+    > created config folder -> db.config.js -> configuration with env
+
+    > created utils folder -> db.js -> configured db with sequelize
+
+    > index.js -> dotenv config for env
+
+    > sequelize -> authentication -> synchronization with models -> port connection
+
+> 3. Creating Model :
+
+        user model
