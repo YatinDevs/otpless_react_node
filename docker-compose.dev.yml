@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  nodeserver:
+    ports:
+      - "8088:8088" # Maps container port 8088 to host port 8089
+
+  reactclient:
+    ports:
+      - "5173:5173" # Maps container port 4173 to host port 3000
+    command: ["yarn", "dev"]

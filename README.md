@@ -78,3 +78,11 @@
 > 3. Creating Model :
 
         user model
+
+> for Dev :
+
+        docker-compose -f docker-compose.yml -f docker-compose.dev.yml up --build
+
+> for Prod :
+
+        docker-compose -f docker-compose.yml -f docker-compose.prod.yml up --build
